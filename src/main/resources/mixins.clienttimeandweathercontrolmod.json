@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.github.minecraft269.clienttimeandweathercontrolmod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinClientLevel"
+  ],
+  "client": [
+    "MixinLevelRenderer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mixins.clienttimeandweathercontrolmod.refmap.json"
+}
