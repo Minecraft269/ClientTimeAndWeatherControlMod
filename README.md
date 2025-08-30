@@ -5,4 +5,6 @@
 
 [Cloth Config API](https://modrinth.com/mod/cloth-config)
 
+> 开发灵感来源于DarkKronicle的[Client Time](https://github.com/DarkKronicle/ClientTime)
+
 使用MIT协议开源
