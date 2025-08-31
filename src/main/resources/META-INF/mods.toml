@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="clienttimeandweathercontrolmod"
+version="${mod_version}"
+displayName="ClientTimeAndWeatherControlMod"
+description="Modifies the time and sky for the client"
+authors="Minecraft269"
+
+[[dependencies.clienttimeandweathercontrolmod]]
+modId="forge"
+versionRange="${forge_version_range}"
+mandatory=true
+
+[[dependencies.clienttimeandweathercontrolmod]]
+modId="minecraft"
+versionRange="${minecraft_version_range}"
+mandatory=true
+
+[[dependencies.clienttimeandweathercontrolmod]]
+modId="cloth_config"
+versionRange="${cloth_config_version_range}"
+mandatory=true
+
+# 添加 ModMenu 兼容性部分（即使我们不直接依赖它）
+[modproperties.clienttimeandweathercontrolmod]
+badges=["client"]
+links=["modmenu.discord=https://discord.gg/WnaE3uZxDA"]

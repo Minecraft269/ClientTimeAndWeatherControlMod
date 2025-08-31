@@ -1,0 +1,48 @@
+{
+  "clienttimeandweathercontrolmod.screen.main": "§e客户端时间配置",
+  "category.clienttimeandweathercontrolmod.general": "通用",
+
+  "clienttimeandweathercontrolmod.config.time.active": "启用",
+  "clienttimeandweathercontrolmod.config.time.info.active": "是否§6覆盖§r当前时间",
+
+  "clienttimeandweathercontrolmod.config.timetype.static": "§6静态",
+  "clienttimeandweathercontrolmod.config.timetype.loop_skip": "§9循环",
+  "clienttimeandweathercontrolmod.config.timetype.loop_reverse": "§b循环往返",
+  "clienttimeandweathercontrolmod.config.timetype.sky_only": "§a仅天空",
+
+  "clienttimeandweathercontrolmod.config.time.timetype": "时间类型",
+  "clienttimeandweathercontrolmod.config.time.info.timetype": "ClientTimeAndWeatherControlMod设置时间的行为方式\n\n§6静态§r - 时间§6不会改变§r，类似于关闭doDaylightCycle\n§9循环§r - 当达到§6结束时间§r时，ClientTimeAndWeatherControlMod会将当前时间§6设置回开始时间§r\n§b循环往返§r - 当达到结束时间时，当前时间将§6向后§r移动直到达到开始时间，然后时间再次向前移动\n§a仅天空§r - §6不对天空做任何操作§r不影响实际游戏时间",
+
+  "clienttimeandweathercontrolmod.config.time.time": "时间",
+  "clienttimeandweathercontrolmod.config.time.info.time": "§6模组激活时设置的时间§r，以Tick为单位\n当§6循环速度§r大于§b0§r时，此值对应于循环的§6开始时间§r，以Tick为单位",
+
+  "clienttimeandweathercontrolmod.config.time.loopspeed": "循环速度",
+  "clienttimeandweathercontrolmod.config.time.info.loopspeed": "§6时间前进的速度§r，以每秒Tick数为单位。将此值设置为§b0§r以§c禁用§r循环",
+
+  "clienttimeandweathercontrolmod.config.time.loopstart": "开始时间",
+  "clienttimeandweathercontrolmod.config.time.info.loopstart": "循环的§6开始时间§r，以Tick为单位",
+
+  "clienttimeandweathercontrolmod.config.time.loopend": "结束时间",
+  "clienttimeandweathercontrolmod.config.time.info.loopend": "循环的§6结束时间§r，以Tick为单位",
+
+  "clienttimeandweathercontrolmod.config.info.timetype.change": "更改时间类型后，配置界面会自动刷新显示相应的选项",
+
+  "clienttimeandweathercontrolmod.config.info.options.alwaysvisible": "\"循环速度\"和\"开始时间\"以及\"结束时间\"仅在\"循环跳跃\"和\"循环往返\"模式可编辑其它模式编辑后关闭界面自动恢复",
+
+  "category.clienttimeandweathercontrolmod.time": "时间",
+
+  "category.clienttimeandweathercontrolmod.weather": "天气",
+
+  "clienttimeandweathercontrolmod.config.weather.active": "启用天气控制",
+  "clienttimeandweathercontrolmod.config.weather.info.active": "是否覆盖原版天气行为",
+
+  "clienttimeandweathercontrolmod.config.weathertype.clear": "§b晴天",
+  "clienttimeandweathercontrolmod.config.weathertype.rain": "§9雨天/雪天",
+  "clienttimeandweathercontrolmod.config.weathertype.thunder": "§5雷暴/暴雪",
+
+  "clienttimeandweathercontrolmod.config.weather.weathertype": "天气类型",
+  "clienttimeandweathercontrolmod.config.weather.info.weathertype": "要设置的天气类型\n\n§b晴天§r - 无雨无雪，晴朗天空\n§9雨天/雪天§r - 下雨或在寒冷生物群系下雪\n§5雷暴/暴雪§r - 雷雨或在寒冷生物群系暴雪",
+
+  "key.clienttimeandweathercontrolmod.open_config": "打开配置界面",
+  "category.clienttimeandweathercontrolmod": "客户端时间与天气控制模组"
+}

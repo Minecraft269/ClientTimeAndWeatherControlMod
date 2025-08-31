@@ -1,0 +1,48 @@
+{
+  "clienttimeandweathercontrolmod.screen.main": "§eClientTimeAndWeatherControlMod Config",
+  "category.clienttimeandweathercontrolmod.general": "General",
+
+  "clienttimeandweathercontrolmod.config.time.active": "Active",
+  "clienttimeandweathercontrolmod.config.time.info.active": "Whether or not the current time is §6overridden§r",
+
+  "clienttimeandweathercontrolmod.config.timetype.static": "§6Static",
+  "clienttimeandweathercontrolmod.config.timetype.loop_skip": "§9Loop Skip",
+  "clienttimeandweathercontrolmod.config.timetype.loop_reverse": "§bLoop Reverse",
+  "clienttimeandweathercontrolmod.config.timetype.sky_only": "§aSky Only",
+
+  "clienttimeandweathercontrolmod.config.time.timetype": "Time Type",
+  "clienttimeandweathercontrolmod.config.time.info.timetype": "The behavior of how ClientTimeAndWeatherControlMod sets the time \n\n§6Static§r - The time §6doesn't change§r, akin to having doDaylightCycle off\n§9Loop Skip§r - When the §6end time§r is reached, ClientTimeAndWeatherControlMod will set the current\n time §6back to the start time§r\n§bLoop Reverse§r - When the end time is reached, the currenrt time will go §6backwards§r\n until the start time is reached, at which point time will go forwards again",
+
+  "clienttimeandweathercontrolmod.config.time.time": "Time",
+  "clienttimeandweathercontrolmod.config.time.info.time": "The §6time that is set when the mod is active§r, in ticks\nWhen §6Loop Speed§r is greater than §b0§r, then this value corresponds to the §6starting time of the loop§r, in ticks",
+
+  "clienttimeandweathercontrolmod.config.time.loopspeed": "Loop Speed",
+  "clienttimeandweathercontrolmod.config.time.info.loopspeed": "How quickly the §6time should advance§r, in ticks per second, when looping. Set this value to §b0§r to §cdisable§r looping altogether",
+
+  "clienttimeandweathercontrolmod.config.time.loopstart": "Start Time",
+  "clienttimeandweathercontrolmod.config.time.info.loopstart": "The §6start time§r of the loop, in ticks",
+
+  "clienttimeandweathercontrolmod.config.time.loopend": "End Time",
+  "clienttimeandweathercontrolmod.config.time.info.loopend": "The §6end time§r of the loop, in ticks",
+
+  "clienttimeandweathercontrolmod.config.info.timetype.change": "After changing the time type, the configuration interface automatically refreshes to display the corresponding options",
+
+  "clienttimeandweathercontrolmod.config.info.options.alwaysvisible": "The \"Loop Speed\", \"Start Time\", and \"End Time\" are only automatically restored after the \"Loop Skip\" and \"Loop Reverse\" modes can be edited, and other modes can be edited",
+
+  "category.clienttimeandweathercontrolmod.time": "Time",
+
+  "category.clienttimeandweathercontrolmod.weather": "Weather",
+
+  "clienttimeandweathercontrolmod.config.weather.active": "Active Weather Control",
+  "clienttimeandweathercontrolmod.config.weather.info.active": "Should the original weather behavior be overridden?",
+
+  "clienttimeandweathercontrolmod.config.weathertype.clear": "§bClear",
+  "clienttimeandweathercontrolmod.config.weathertype.rain": "§9Rain/Snowy",
+  "clienttimeandweathercontrolmod.config.weathertype.thunder": "§5Thunder Storm/Blizzard",
+
+  "clienttimeandweathercontrolmod.config.weather.weathertype": "Weather Type",
+  "clienttimeandweathercontrolmod.config.weather.info.weathertype": "The type of weather you want to set\n\n§b Clear §r - No rain or snow, clear skies\n§9 Rain/Snow §r - Rain or snow in cold biomes\n§5 Thunderstorm/Blizzard§r - Thunderstorm or Blizzard in the cold biome",
+
+  "key.clienttimeandweathercontrolmod.open_config": "Open Config GUI",
+  "category.clienttimeandweathercontrolmod": "Client Time And Weather Control Mod"
+}
