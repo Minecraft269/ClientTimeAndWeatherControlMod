@@ -1,6 +1,7 @@
 package me.github.minecraft269.clienttimeandweathercontrolmod.time;
 
 import me.github.minecraft269.clienttimeandweathercontrolmod.config.ConfigStorage;
+import me.github.minecraft269.clienttimeandweathercontrolmod.moon.MoonPhaseController;
 import me.github.minecraft269.clienttimeandweathercontrolmod.weather.WeatherController;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,6 +23,11 @@ public class TimeEventHandler {
             if (ConfigStorage.isWeatherActive()) {
                 WeatherController.getInstance().update();
             }
+
+            // 移除月相的更新调用，因为现在通过Mixin直接修改渲染
+            // if (ConfigStorage.isMoonActive()) {
+            //     MoonPhaseController.getInstance().update();
+            // }
         }
     }
 }

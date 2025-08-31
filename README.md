@@ -7,4 +7,7 @@
 
 > 开发灵感来源于DarkKronicle的[Client Time](https://github.com/DarkKronicle/ClientTime)
 
+
+默认使用C键打开配置界面 使用/ctwcdebug查看模组状态
+
 使用MIT协议开源

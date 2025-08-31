@@ -8,10 +8,9 @@
   "clienttimeandweathercontrolmod.config.timetype.static": "§6静态",
   "clienttimeandweathercontrolmod.config.timetype.loop_skip": "§9循环",
   "clienttimeandweathercontrolmod.config.timetype.loop_reverse": "§b循环往返",
-  "clienttimeandweathercontrolmod.config.timetype.sky_only": "§a仅天空",
 
   "clienttimeandweathercontrolmod.config.time.timetype": "时间类型",
-  "clienttimeandweathercontrolmod.config.time.info.timetype": "ClientTimeAndWeatherControlMod设置时间的行为方式\n\n§6静态§r - 时间§6不会改变§r，类似于关闭doDaylightCycle\n§9循环§r - 当达到§6结束时间§r时，ClientTimeAndWeatherControlMod会将当前时间§6设置回开始时间§r\n§b循环往返§r - 当达到结束时间时，当前时间将§6向后§r移动直到达到开始时间，然后时间再次向前移动\n§a仅天空§r - §6不对天空做任何操作§r不影响实际游戏时间",
+  "clienttimeandweathercontrolmod.config.time.info.timetype": "ClientTimeAndWeatherControlMod设置时间的行为方式\n\n§6静态§r - 时间§6不会改变§r，类似于关闭doDaylightCycle\n§9循环§r - 当达到§6结束时间§r时，ClientTimeAndWeatherControlMod会将当前时间§6设置回开始时间§r\n§b循环往返§r - 当达到结束时间时，当前时间将§6向后§r移动直到达到开始时间，然后时间再次向前移动",
 
   "clienttimeandweathercontrolmod.config.time.time": "时间",
   "clienttimeandweathercontrolmod.config.time.info.time": "§6模组激活时设置的时间§r，以Tick为单位\n当§6循环速度§r大于§b0§r时，此值对应于循环的§6开始时间§r，以Tick为单位",
@@ -44,5 +43,35 @@
   "clienttimeandweathercontrolmod.config.weather.info.weathertype": "要设置的天气类型\n\n§b晴天§r - 无雨无雪，晴朗天空\n§9雨天/雪天§r - 下雨或在寒冷生物群系下雪\n§5雷暴/暴雪§r - 雷雨或在寒冷生物群系暴雪",
 
   "key.clienttimeandweathercontrolmod.open_config": "打开配置界面",
-  "category.clienttimeandweathercontrolmod": "客户端时间与天气控制模组"
+  "category.clienttimeandweathercontrolmod": "客户端时间与天气控制模组",
+
+  "category.clienttimeandweathercontrolmod.moon": "月相",
+
+  "clienttimeandweathercontrolmod.config.moon.active": "启用月相控制",
+  "clienttimeandweathercontrolmod.config.moon.info.active": "是否覆盖原版月相行为",
+
+  "clienttimeandweathercontrolmod.config.moonphase.full_moon": "§b满月",
+  "clienttimeandweathercontrolmod.config.moonphase.waning_gibbous": "§9亏凸月",
+  "clienttimeandweathercontrolmod.config.moonphase.last_quarter": "§6下弦月",
+  "clienttimeandweathercontrolmod.config.moonphase.waning_crescent": "§5残月",
+  "clienttimeandweathercontrolmod.config.moonphase.new_moon": "§0新月",
+  "clienttimeandweathercontrolmod.config.moonphase.waxing_crescent": "§5娥眉月",
+  "clienttimeandweathercontrolmod.config.moonphase.first_quarter": "§6上弦月",
+  "clienttimeandweathercontrolmod.config.moonphase.waxing_gibbous": "§9盈凸月",
+
+  "clienttimeandweathercontrolmod.config.moon.moonphase": "月相类型",
+  "clienttimeandweathercontrolmod.config.moon.info.moonphase": "要设置的月相类型\n\n§b满月§r - 完整的圆形月亮\n§9亏凸月§r - 大部分可见但开始变小的月亮\n§6下弦月§r - 右半部分可见的月亮\n§5残月§r - 只有一小部分可见的月亮\n§0新月§r - 完全不可见的月亮\n§5娥眉月§r - 只有一小部分可见的月亮（左侧）\n§6上弦月§r - 左半部分可见的月亮\n§9盈凸月§r - 大部分可见且继续变大的月亮",
+
+  "clienttimeandweathercontrolmod.config.moon.moonloopspeed": "月相循环速度",
+  "clienttimeandweathercontrolmod.config.moon.info.moonloopspeed": "§6月相变化的速度§r，以每秒月相数为单位。将此值设置为§b0§r以§c禁用§r循环",
+
+  "clienttimeandweathercontrolmod.config.moon.preview": "月相预览：\n满月 → 亏凸月 → 下弦月 → 残月 → 新月 → 娥眉月 → 上弦月 → 盈凸月 → 满月",
+
+  "clienttimeandweathercontrolmod.config.moon.interval_info": "月相循环间隔：\n循环速度 1 = 每相1秒，完整循环8秒\n循环速度 10 = 每相0.1秒，完整循环0.8秒\n循环速度 100 = 每相0.01秒，完整循环0.08秒",
+
+  "clienttimeandweathercontrolmod.debug.info": "CTWC 调试信息:\n激活: %s\n时间类型: %s\n循环速度: %s\n循环开始: %s\n循环结束: %s\n当前时间: %s\n目标时间: %s\n月相激活: %s\n月相类型: %s\n月相循环速度: %s\n当前月相: %s\n月相ID: %s",
+
+  "clienttimeandweathercontrolmod.config.moon.show_preview": "显示月相预览",
+  "clienttimeandweathercontrolmod.screen.moon_preview": "月相预览",
+  "gui.back": "返回"
 }
