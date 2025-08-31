@@ -1,5 +1,7 @@
 package me.github.minecraft269.clienttimeandweathercontrolmod.config;
 
+import me.github.minecraft269.clienttimeandweathercontrolmod.moon.MoonPhase;
+import me.github.minecraft269.clienttimeandweathercontrolmod.moon.MoonPhaseController;
 import me.github.minecraft269.clienttimeandweathercontrolmod.time.TimeStorage;
 import me.github.minecraft269.clienttimeandweathercontrolmod.time.TimeType;
 import me.github.minecraft269.clienttimeandweathercontrolmod.weather.WeatherType;
@@ -48,5 +50,20 @@ public class ConfigStorage {
         ClientTimeAndWeatherControlModConfig.save();
         // 确保配置更改后立即更新时间
         TimeStorage.getInstance().updateChanges();
+        // 确保配置更改后立即更新月相
+        MoonPhaseController.getInstance().updateChanges();
+    }
+
+    // 月相配置方法
+    public static boolean isMoonActive() {
+        return ClientTimeAndWeatherControlModConfig.get().moon.active;
+    }
+
+    public static MoonPhase getMoonPhase() {
+        return ClientTimeAndWeatherControlModConfig.get().moon.moonPhase;
+    }
+
+    public static int getMoonLoopSpeed() {
+        return ClientTimeAndWeatherControlModConfig.get().moon.moonLoopSpeed;
     }
 }

@@ -2,7 +2,6 @@ package me.github.minecraft269.clienttimeandweathercontrolmod.time;
 
 import me.github.minecraft269.clienttimeandweathercontrolmod.time.timetypes.LoopReverseTimeSupplier;
 import me.github.minecraft269.clienttimeandweathercontrolmod.time.timetypes.LoopSkipTimeSupplier;
-import me.github.minecraft269.clienttimeandweathercontrolmod.time.timetypes.SkyOnlyTimeSupplier;
 import me.github.minecraft269.clienttimeandweathercontrolmod.time.timetypes.StaticTimeSupplier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringRepresentable;
@@ -18,8 +17,7 @@ import java.util.function.Supplier;
 public enum TimeType implements StringRepresentable {
     STATIC("static", StaticTimeSupplier::new),
     LOOP_SKIP("loop_skip", LoopSkipTimeSupplier::new),
-    LOOP_REVERSE("loop_reverse", LoopReverseTimeSupplier::new),
-    SKY_ONLY("sky_only", SkyOnlyTimeSupplier::new); // 新增混合模式
+    LOOP_REVERSE("loop_reverse", LoopReverseTimeSupplier::new);
 
     private final String configValue;
     @Getter
