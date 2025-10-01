@@ -1,5 +1,8 @@
 package me.github.minecraft269.clienttimeandweathercontrolmod.config;
 
+import me.github.minecraft269.clienttimeandweathercontrolmod.moon.MoonPhase;
+import me.github.minecraft269.clienttimeandweathercontrolmod.moon.MoonPhaseController;
+import me.github.minecraft269.clienttimeandweathercontrolmod.time.TimeStorage;
 import me.github.minecraft269.clienttimeandweathercontrolmod.weather.WeatherType;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
@@ -19,6 +22,10 @@ public class ClientTimeAndWeatherControlModConfig implements ConfigData {
     @ConfigEntry.Gui.TransitiveObject
     public WeatherSettings weather = new WeatherSettings();
 
+    @ConfigEntry.Category("moon")
+    @ConfigEntry.Gui.TransitiveObject
+    public MoonSettings moon = new MoonSettings();
+
     public static class TimeSettings {
         public boolean active = false;
 
@@ -36,6 +43,12 @@ public class ClientTimeAndWeatherControlModConfig implements ConfigData {
 
         @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
         public WeatherType weatherType = WeatherType.CLEAR;
+
+        // 细粒度天气控制选项
+        public boolean overrideRainSound = true;
+        public boolean overrideThunderSound = true;
+        public boolean overrideLightning = true;
+        public boolean overrideRainParticles = true;
     }
 
     public static void register() {
@@ -48,5 +61,14 @@ public class ClientTimeAndWeatherControlModConfig implements ConfigData {
 
     public static void save() {
         AutoConfig.getConfigHolder(ClientTimeAndWeatherControlModConfig.class).save();
+    }
+
+    public static class MoonSettings {
+        public boolean active = false;
+
+        @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+        public MoonPhase moonPhase = MoonPhase.FULL_MOON;
+
+        public int moonLoopSpeed = 0;
     }
 }

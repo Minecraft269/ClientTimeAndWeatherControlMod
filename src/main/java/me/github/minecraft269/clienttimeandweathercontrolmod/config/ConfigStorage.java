@@ -1,5 +1,7 @@
 package me.github.minecraft269.clienttimeandweathercontrolmod.config;
 
+import me.github.minecraft269.clienttimeandweathercontrolmod.moon.MoonPhase;
+import me.github.minecraft269.clienttimeandweathercontrolmod.moon.MoonPhaseController;
 import me.github.minecraft269.clienttimeandweathercontrolmod.time.TimeStorage;
 import me.github.minecraft269.clienttimeandweathercontrolmod.time.TimeType;
 import me.github.minecraft269.clienttimeandweathercontrolmod.weather.WeatherType;
@@ -44,9 +46,41 @@ public class ConfigStorage {
         return ClientTimeAndWeatherControlModConfig.get().weather.weatherType;
     }
 
+    // 细粒度天气控制方法
+    public static boolean isOverrideRainSound() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideRainSound;
+    }
+
+    public static boolean isOverrideThunderSound() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideThunderSound;
+    }
+
+    public static boolean isOverrideLightning() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideLightning;
+    }
+
+    public static boolean isOverrideRainParticles() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideRainParticles;
+    }
+
     public static void save() {
         ClientTimeAndWeatherControlModConfig.save();
         // 确保配置更改后立即更新时间
         TimeStorage.getInstance().updateChanges();
+        // 确保配置更改后立即更新月相
+        MoonPhaseController.getInstance().updateChanges();
+    }
+
+    // 月相配置方法
+    public static boolean isMoonActive() {
+        return ClientTimeAndWeatherControlModConfig.get().moon.active;
+    }
+
+    public static MoonPhase getMoonPhase() {
+        return ClientTimeAndWeatherControlModConfig.get().moon.moonPhase;
+    }
+
+    public static int getMoonLoopSpeed() {
+        return ClientTimeAndWeatherControlModConfig.get().moon.moonLoopSpeed;
     }
 }
