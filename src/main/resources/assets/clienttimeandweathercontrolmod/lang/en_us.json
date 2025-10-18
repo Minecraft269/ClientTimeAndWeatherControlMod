@@ -8,10 +8,9 @@
   "clienttimeandweathercontrolmod.config.timetype.static": "§6Static",
   "clienttimeandweathercontrolmod.config.timetype.loop_skip": "§9Loop Skip",
   "clienttimeandweathercontrolmod.config.timetype.loop_reverse": "§bLoop Reverse",
-  "clienttimeandweathercontrolmod.config.timetype.sky_only": "§aSky Only",
 
   "clienttimeandweathercontrolmod.config.time.timetype": "Time Type",
-  "clienttimeandweathercontrolmod.config.time.info.timetype": "The behavior of how ClientTimeAndWeatherControlMod sets the time \n\n§6Static§r - The time §6doesn't change§r, akin to having doDaylightCycle off\n§9Loop Skip§r - When the §6end time§r is reached, ClientTimeAndWeatherControlMod will set the current\n time §6back to the start time§r\n§bLoop Reverse§r - When the end time is reached, the currenrt time will go §6backwards§r\n until the start time is reached, at which point time will go forwards again",
+  "clienttimeandweathercontrolmod.config.time.info.timetype": "The behavior of how ClientTimeAndWeatherControlMod sets the time \n\n§6Static§r - The time §6doesn't change§r, akin to having doDaylightCycle off\n§9Loop Skip§r - When the §6end time§r is reached, ClientTimeAndWeatherControlMod will set the current\n time §6back to the start time§r\n§bLoop Reverse§r - When the end time is reached, the current time will go §6backwards§r\n until the start time is reached, at which point time will go forwards again",
 
   "clienttimeandweathercontrolmod.config.time.time": "Time",
   "clienttimeandweathercontrolmod.config.time.info.time": "The §6time that is set when the mod is active§r, in ticks\nWhen §6Loop Speed§r is greater than §b0§r, then this value corresponds to the §6starting time of the loop§r, in ticks",
@@ -44,5 +43,35 @@
   "clienttimeandweathercontrolmod.config.weather.info.weathertype": "The type of weather you want to set\n\n§b Clear §r - No rain or snow, clear skies\n§9 Rain/Snow §r - Rain or snow in cold biomes\n§5 Thunderstorm/Blizzard§r - Thunderstorm or Blizzard in the cold biome",
 
   "key.clienttimeandweathercontrolmod.open_config": "Open Config GUI",
-  "category.clienttimeandweathercontrolmod": "Client Time And Weather Control Mod"
+  "category.clienttimeandweathercontrolmod": "Client Time And Weather Control Mod",
+
+  "category.clienttimeandweathercontrolmod.moon": "Moon",
+
+  "clienttimeandweathercontrolmod.config.moon.active": "Active Moon Control",
+  "clienttimeandweathercontrolmod.config.moon.info.active": "Should the original moon behavior be overridden?",
+
+  "clienttimeandweathercontrolmod.config.moonphase.full_moon": "§bFull Moon",
+  "clienttimeandweathercontrolmod.config.moonphase.waning_gibbous": "§9Waning Gibbous",
+  "clienttimeandweathercontrolmod.config.moonphase.last_quarter": "§6Last Quarter",
+  "clienttimeandweathercontrolmod.config.moonphase.waning_crescent": "§5Waning Crescent",
+  "clienttimeandweathercontrolmod.config.moonphase.new_moon": "§0New Moon",
+  "clienttimeandweathercontrolmod.config.moonphase.waxing_crescent": "§5Waxing Crescent",
+  "clienttimeandweathercontrolmod.config.moonphase.first_quarter": "§6First Quarter",
+  "clienttimeandweathercontrolmod.config.moonphase.waxing_gibbous": "§9Waxing Gibbous",
+
+  "clienttimeandweathercontrolmod.config.moon.moonphase": "Moon Phase",
+  "clienttimeandweathercontrolmod.config.moon.info.moonphase": "The type of moon phase you want to set\n\n§bFull Moon§r - Complete circle moon\n§9Waning Gibbous§r - Mostly visible but getting smaller\n§6Last Quarter§r - Right half visible\n§5Waning Crescent§r - Only a small part visible\n§0New Moon§r - Completely invisible\n§5Waxing Crescent§r - Only a small part visible (left side)\n§6First Quarter§r - Left half visible\n§9Waxing Gibbous§r - Mostly visible and getting larger",
+
+  "clienttimeandweathercontrolmod.config.moon.moonloopspeed": "Moon Loop Speed",
+  "clienttimeandweathercontrolmod.config.moon.info.moonloopspeed": "How quickly the §6moon phase should change§r, in phases per second. Set this value to §b0§r to §cdisable§r looping altogether",
+
+  "clienttimeandweathercontrolmod.config.moon.preview": "Moon Phase Preview:\nFull Moon → Waning Gibbous → Last Quarter → Waning Crescent → New Moon → Waxing Crescent → First Quarter → Waxing Gibbous → Full Moon",
+
+  "clienttimeandweathercontrolmod.config.moon.interval_info": "Moon Phase Cycle Intervals:\nLoop Speed 1 = 1 second per phase, 8 seconds per full cycle\nLoop Speed 10 = 0.1 second per phase, 0.8 seconds per full cycle\nLoop Speed 100 = 0.01 second per phase, 0.08 seconds per full cycle",
+
+  "clienttimeandweathercontrolmod.debug.info": "CTWC Debug Info:\nActive: %s\nTime Type: %s\nLoop Speed: %s\nLoop Start: %s\nLoop End: %s\nCurrent Time: %s\nTarget Time: %s\nMoon Active: %s\nMoon Phase: %s\nMoon Loop Speed: %s\nCurrent Moon Phase: %s\nMoon Phase ID: %s",
+
+  "clienttimeandweathercontrolmod.config.moon.show_preview": "Show Moon Preview",
+  "clienttimeandweathercontrolmod.screen.moon_preview": "Moon Phase Preview",
+  "gui.back": "Back"
 }

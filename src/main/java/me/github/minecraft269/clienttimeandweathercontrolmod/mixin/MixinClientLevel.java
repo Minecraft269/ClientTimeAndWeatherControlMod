@@ -16,9 +16,8 @@ public class MixinClientLevel {
 
     @Inject(method = "setDayTime", at = @At("HEAD"), cancellable = true)
     private void onSetDayTime(long time, CallbackInfo ci) {
-        // 如果模组激活且不是SkyOnly模式，取消所有服务器发送的时间更新
-        if (ConfigStorage.isActive() &&
-                !ConfigStorage.getTimeType().getSerializedName().equals("sky_only")) {
+        // 如果模组激活，取消所有服务器发送的时间更新
+        if (ConfigStorage.isActive()) {
             // 获取模组设置的目标时间
             int targetTime = TimeStorage.getInstance().getTime();
 

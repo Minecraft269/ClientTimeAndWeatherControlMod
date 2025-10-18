@@ -19,14 +19,14 @@ public class TimeStorage {
     // 跟踪最后一次设置的客户端时间
     private int lastSetTime = -1;
     private long lastUpdateTime = 0;
-    private static final long UPDATE_INTERVAL = 100; // 每100ms更新一次
+    private static final long UPDATE_INTERVAL = 16; // 约60FPS的更新频率
 
     // 添加标志位来防止递归调用
     private boolean isSyncing = false;
 
     // 添加计数器减少日志输出
     private int logCounter = 0;
-    private static final int LOG_INTERVAL = 1000; // 每1000次更新记录一次日志
+    private static final int LOG_INTERVAL = 60; // 每60次更新记录一次日志（约每秒一次）
 
     public static TimeStorage getInstance() {
         return INSTANCE;
@@ -49,6 +49,9 @@ public class TimeStorage {
         supplier = ConfigStorage.getTimeType().getSupplier().get();
         LOGGER.info("TimeStorage updated changes, supplier: " + supplier.getClass().getSimpleName());
         LOGGER.info("Active: " + ConfigStorage.isActive() + ", Time: " + ConfigStorage.getTime());
+        LOGGER.info("LoopSpeed: " + ConfigStorage.getLoopSpeed() +
+                ", LoopStart: " + ConfigStorage.getLoopStart() +
+                ", LoopEnd: " + ConfigStorage.getLoopEnd());
 
         // 重置跟踪变量
         lastSetTime = -1;
@@ -93,7 +96,7 @@ public class TimeStorage {
                 // 减少日志输出频率
                 logCounter++;
                 if (logCounter % LOG_INTERVAL == 0) {
-                    LOGGER.info("Setting time from " + currentTime + " to: " + targetTime);
+                    LOGGER.debug("Setting time from " + currentTime + " to: " + targetTime);
                 }
                 setTimeSafely(targetTime);
                 lastSetTime = targetTime;
@@ -122,12 +125,25 @@ public class TimeStorage {
             LOGGER.info("Supplier is null, initializing...");
             updateChanges();
         }
-        int time = supplier.getTime(getMs() - startMs);
+
+        long elapsedMs = getMs() - startMs;
+        int time = supplier.getTime(elapsedMs);
+
+        // 添加调试信息
+        if (logCounter % 120 == 0) { // 每2秒输出一次
+            LOGGER.debug("Elapsed ms: " + elapsedMs + ", Raw time: " + time);
+        }
+
         // 确保时间在有效范围内 (0-24000)
         int result = time % 24000;
         if (result < 0) {
-            result += 24000; // 确保结果为非负数
+            result += 24000;
         }
+
+        if (logCounter % 120 == 0) { // 每2秒输出一次
+            LOGGER.debug("Final time: " + result);
+        }
+
         return result;
     }
 
