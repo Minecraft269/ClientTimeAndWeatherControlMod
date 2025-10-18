@@ -230,4 +230,45 @@ public class ConfigScreen {
         category.addEntry(entryBuilder.startTextDescription(Component.translatable("clienttimeandweathercontrolmod.config.moon.interval_info"))
                 .build());
     }
+
+    // 添加月相配置方法
+    private static void addMoonOptions(ConfigEntryBuilder entryBuilder, ConfigCategory category) {
+        // 月相激活选项
+        category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("clienttimeandweathercontrolmod.config.moon.active"), ClientTimeAndWeatherControlModConfig.get().moon.active)
+                .setDefaultValue(false)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.moon.info.active"))
+                .setSaveConsumer(newValue -> ClientTimeAndWeatherControlModConfig.get().moon.active = newValue)
+                .build());
+
+        // 月相类型下拉菜单
+        category.addEntry(entryBuilder.startEnumSelector(Component.translatable("clienttimeandweathercontrolmod.config.moon.moonphase"), MoonPhase.class, ClientTimeAndWeatherControlModConfig.get().moon.moonPhase)
+                .setDefaultValue(MoonPhase.FULL_MOON)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.moon.info.moonphase"))
+                .setEnumNameProvider(value -> ((MoonPhase) value).getDisplayName())
+                .setSaveConsumer(newValue -> {
+                    ClientTimeAndWeatherControlModConfig.get().moon.moonPhase = (MoonPhase) newValue;
+                    ClientTimeAndWeatherControlModConfig.save();
+                })
+                .build());
+
+        // 月相循环速度选项
+        category.addEntry(entryBuilder.startIntField(Component.translatable("clienttimeandweathercontrolmod.config.moon.moonloopspeed"), ClientTimeAndWeatherControlModConfig.get().moon.moonLoopSpeed)
+                .setDefaultValue(0)
+                .setMin(-100)
+                .setMax(100)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.moon.info.moonloopspeed"))
+                .setSaveConsumer(newValue -> ClientTimeAndWeatherControlModConfig.get().moon.moonLoopSpeed = newValue)
+                .build());
+
+        // 月相预览按钮 - 使用自定义组件
+        category.addEntry(new MoonPreviewEntry());
+
+        // 月相预览说明
+        category.addEntry(entryBuilder.startTextDescription(Component.translatable("clienttimeandweathercontrolmod.config.moon.preview"))
+                .build());
+
+        // 月相循环间隔说明
+        category.addEntry(entryBuilder.startTextDescription(Component.translatable("clienttimeandweathercontrolmod.config.moon.interval_info"))
+                .build());
+    }
 }

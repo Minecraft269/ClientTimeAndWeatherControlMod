@@ -86,4 +86,5 @@
 
   "clienttimeandweathercontrolmod.config.weather.override_rain_particles": "Override Rain/Snow Particles",
   "clienttimeandweathercontrolmod.config.weather.info.override_rain_particles": "Whether to override the default rain/snow particle effects"
+  "gui.back": "Back"
 }

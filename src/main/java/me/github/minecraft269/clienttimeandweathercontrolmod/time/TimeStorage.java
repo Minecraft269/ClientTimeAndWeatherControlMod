@@ -142,6 +142,13 @@ public class TimeStorage {
         return result;
     }
 
+        if (logCounter % 120 == 0) { // 每2秒输出一次
+            LOGGER.debug("Final time: " + result);
+        }
+
+        return result;
+    }
+
     /**
      * 强制同步时间，确保客户端时间与设置的时间一致
      */

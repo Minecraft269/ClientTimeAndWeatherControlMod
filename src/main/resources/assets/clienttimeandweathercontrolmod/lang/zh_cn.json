@@ -86,4 +86,5 @@
 
   "clienttimeandweathercontrolmod.config.weather.override_rain_particles": "覆盖雨雪粒子",
   "clienttimeandweathercontrolmod.config.weather.info.override_rain_particles": "是否覆盖原版雨雪粒子效果"
+  "gui.back": "返回"
 }
