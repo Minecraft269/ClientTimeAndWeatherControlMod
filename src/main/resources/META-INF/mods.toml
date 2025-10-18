@@ -2,6 +2,8 @@ modLoader="javafml"
 loaderVersion="[47,)"
 license="MIT"
 
+issueTrackerURL = "https://github.com/Minecraft269/ClientTimeAndWeatherControlMod/issues"
+
 [[mods]]
 modId="clienttimeandweathercontrolmod"
 version="${mod_version}"
@@ -24,7 +26,9 @@ modId="cloth_config"
 versionRange="${cloth_config_version_range}"
 mandatory=true
 
-# 添加 ModMenu 兼容性部分（即使我们不直接依赖它）
 [modproperties.clienttimeandweathercontrolmod]
 badges=["client"]
-links=["modmenu.discord=https://discord.gg/WnaE3uZxDA"]
+links=["modmenu.modrinth=https://modrinth.com/project/bJBWxhMB",
+       "modmenu.mcmod=https://www.mcmod.cn/class/21836.html",
+       "modmenu.github=https://github.com/Minecraft269/ClientTimeAndWeatherControlMod"
+]

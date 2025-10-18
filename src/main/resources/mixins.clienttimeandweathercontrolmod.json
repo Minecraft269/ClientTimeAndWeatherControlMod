@@ -4,10 +4,12 @@
   "package": "me.github.minecraft269.clienttimeandweathercontrolmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinClientLevel"
+    "MixinClientLevel",
+    "MixinLevel"
   ],
   "client": [
-    "MixinLevelRenderer"
+    "MixinLevelRenderer",
+    "MixinWeatherSoundInstance"
   ],
   "injectors": {
     "defaultRequire": 1

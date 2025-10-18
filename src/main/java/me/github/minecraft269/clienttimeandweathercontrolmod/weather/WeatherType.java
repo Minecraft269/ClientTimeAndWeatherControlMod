@@ -34,4 +34,14 @@ public enum WeatherType implements StringRepresentable {
         }
         return CLEAR;
     }
+
+    // 获取对应的雨雪等级
+    public float getRainLevel() {
+        return this == CLEAR ? 0.0f : 1.0f;
+    }
+
+    // 获取对应的雷暴等级
+    public float getThunderLevel() {
+        return this == THUNDER ? 1.0f : 0.0f;
+    }
 }

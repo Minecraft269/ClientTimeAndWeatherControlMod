@@ -46,6 +46,23 @@ public class ConfigStorage {
         return ClientTimeAndWeatherControlModConfig.get().weather.weatherType;
     }
 
+    // 细粒度天气控制方法
+    public static boolean isOverrideRainSound() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideRainSound;
+    }
+
+    public static boolean isOverrideThunderSound() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideThunderSound;
+    }
+
+    public static boolean isOverrideLightning() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideLightning;
+    }
+
+    public static boolean isOverrideRainParticles() {
+        return ClientTimeAndWeatherControlModConfig.get().weather.overrideRainParticles;
+    }
+
     public static void save() {
         ClientTimeAndWeatherControlModConfig.save();
         // 确保配置更改后立即更新时间

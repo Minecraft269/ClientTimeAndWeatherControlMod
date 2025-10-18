@@ -76,11 +76,6 @@ public class TimeStorage {
             return; // 如果模组未激活，不执行任何操作
         }
 
-        // 对于SkyOnly模式，不修改实际游戏时间
-        if (ConfigStorage.getTimeType().getSerializedName().equals("sky_only")) {
-            return;
-        }
-
         long currentTimeMs = getMs();
         if (currentTimeMs - lastUpdateTime < UPDATE_INTERVAL) {
             return; // 避免过于频繁的更新
@@ -147,17 +142,11 @@ public class TimeStorage {
         return result;
     }
 
-    /**
-     * 获取用于天空渲染的时间（SkyOnly模式专用）
-     * 这个方法可以被其他类调用以获取自定义的天空时间
-     */
-    public int getSkyRenderTime() {
-        if (ConfigStorage.isActive() &&
-                ConfigStorage.getTimeType().getSerializedName().equals("sky_only")) {
-            return getTime();
+        if (logCounter % 120 == 0) { // 每2秒输出一次
+            LOGGER.debug("Final time: " + result);
         }
-        // 返回一个无效值，让调用者知道应该使用原版时间
-        return -1;
+
+        return result;
     }
 
     /**

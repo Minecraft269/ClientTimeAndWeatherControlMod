@@ -73,5 +73,18 @@
 
   "clienttimeandweathercontrolmod.config.moon.show_preview": "Show Moon Preview",
   "clienttimeandweathercontrolmod.screen.moon_preview": "Moon Phase Preview",
+  "gui.back": "Back",
+
+  "clienttimeandweathercontrolmod.config.weather.override_rain_sound": "Override Rain Sound",
+  "clienttimeandweathercontrolmod.config.weather.info.override_rain_sound": "Whether to override the default rain sound effect",
+
+  "clienttimeandweathercontrolmod.config.weather.override_thunder_sound": "Override Thunder Sound",
+  "clienttimeandweathercontrolmod.config.weather.info.override_thunder_sound": "Whether to override the default thunder sound effect",
+
+  "clienttimeandweathercontrolmod.config.weather.override_lightning": "Override Lightning",
+  "clienttimeandweathercontrolmod.config.weather.info.override_lightning": "Whether to override the default lightning effect",
+
+  "clienttimeandweathercontrolmod.config.weather.override_rain_particles": "Override Rain/Snow Particles",
+  "clienttimeandweathercontrolmod.config.weather.info.override_rain_particles": "Whether to override the default rain/snow particle effects"
   "gui.back": "Back"
 }

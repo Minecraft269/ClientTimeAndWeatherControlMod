@@ -135,7 +135,10 @@ public class ConfigScreen {
         category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("clienttimeandweathercontrolmod.config.weather.active"), ClientTimeAndWeatherControlModConfig.get().weather.active)
                 .setDefaultValue(false)
                 .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.weather.info.active"))
-                .setSaveConsumer(newValue -> ClientTimeAndWeatherControlModConfig.get().weather.active = newValue)
+                .setSaveConsumer(newValue -> {
+                    ClientTimeAndWeatherControlModConfig.get().weather.active = newValue;
+                    ClientTimeAndWeatherControlModConfig.save();
+                })
                 .build());
 
         // 天气类型下拉菜单
@@ -147,6 +150,84 @@ public class ConfigScreen {
                     ClientTimeAndWeatherControlModConfig.get().weather.weatherType = (WeatherType) newValue;
                     ClientTimeAndWeatherControlModConfig.save();
                 })
+                .build());
+
+        // 细粒度天气控制选项
+        category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("clienttimeandweathercontrolmod.config.weather.override_rain_sound"), ClientTimeAndWeatherControlModConfig.get().weather.overrideRainSound)
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.weather.info.override_rain_sound"))
+                .setSaveConsumer(newValue -> {
+                    ClientTimeAndWeatherControlModConfig.get().weather.overrideRainSound = newValue;
+                    ClientTimeAndWeatherControlModConfig.save();
+                })
+                .build());
+
+        category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("clienttimeandweathercontrolmod.config.weather.override_thunder_sound"), ClientTimeAndWeatherControlModConfig.get().weather.overrideThunderSound)
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.weather.info.override_thunder_sound"))
+                .setSaveConsumer(newValue -> {
+                    ClientTimeAndWeatherControlModConfig.get().weather.overrideThunderSound = newValue;
+                    ClientTimeAndWeatherControlModConfig.save();
+                })
+                .build());
+
+        category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("clienttimeandweathercontrolmod.config.weather.override_lightning"), ClientTimeAndWeatherControlModConfig.get().weather.overrideLightning)
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.weather.info.override_lightning"))
+                .setSaveConsumer(newValue -> {
+                    ClientTimeAndWeatherControlModConfig.get().weather.overrideLightning = newValue;
+                    ClientTimeAndWeatherControlModConfig.save();
+                })
+                .build());
+
+        category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("clienttimeandweathercontrolmod.config.weather.override_rain_particles"), ClientTimeAndWeatherControlModConfig.get().weather.overrideRainParticles)
+                .setDefaultValue(true)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.weather.info.override_rain_particles"))
+                .setSaveConsumer(newValue -> {
+                    ClientTimeAndWeatherControlModConfig.get().weather.overrideRainParticles = newValue;
+                    ClientTimeAndWeatherControlModConfig.save();
+                })
+                .build());
+    }
+
+    // 添加月相配置方法
+    private static void addMoonOptions(ConfigEntryBuilder entryBuilder, ConfigCategory category) {
+        // 月相激活选项
+        category.addEntry(entryBuilder.startBooleanToggle(Component.translatable("clienttimeandweathercontrolmod.config.moon.active"), ClientTimeAndWeatherControlModConfig.get().moon.active)
+                .setDefaultValue(false)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.moon.info.active"))
+                .setSaveConsumer(newValue -> ClientTimeAndWeatherControlModConfig.get().moon.active = newValue)
+                .build());
+
+        // 月相类型下拉菜单
+        category.addEntry(entryBuilder.startEnumSelector(Component.translatable("clienttimeandweathercontrolmod.config.moon.moonphase"), MoonPhase.class, ClientTimeAndWeatherControlModConfig.get().moon.moonPhase)
+                .setDefaultValue(MoonPhase.FULL_MOON)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.moon.info.moonphase"))
+                .setEnumNameProvider(value -> ((MoonPhase) value).getDisplayName())
+                .setSaveConsumer(newValue -> {
+                    ClientTimeAndWeatherControlModConfig.get().moon.moonPhase = (MoonPhase) newValue;
+                    ClientTimeAndWeatherControlModConfig.save();
+                })
+                .build());
+
+        // 月相循环速度选项
+        category.addEntry(entryBuilder.startIntField(Component.translatable("clienttimeandweathercontrolmod.config.moon.moonloopspeed"), ClientTimeAndWeatherControlModConfig.get().moon.moonLoopSpeed)
+                .setDefaultValue(0)
+                .setMin(-100)
+                .setMax(100)
+                .setTooltip(Component.translatable("clienttimeandweathercontrolmod.config.moon.info.moonloopspeed"))
+                .setSaveConsumer(newValue -> ClientTimeAndWeatherControlModConfig.get().moon.moonLoopSpeed = newValue)
+                .build());
+
+        // 月相预览按钮 - 使用自定义组件
+        category.addEntry(new MoonPreviewEntry());
+
+        // 月相预览说明
+        category.addEntry(entryBuilder.startTextDescription(Component.translatable("clienttimeandweathercontrolmod.config.moon.preview"))
+                .build());
+
+        // 月相循环间隔说明
+        category.addEntry(entryBuilder.startTextDescription(Component.translatable("clienttimeandweathercontrolmod.config.moon.interval_info"))
                 .build());
     }
 

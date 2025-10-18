@@ -73,5 +73,18 @@
 
   "clienttimeandweathercontrolmod.config.moon.show_preview": "显示月相预览",
   "clienttimeandweathercontrolmod.screen.moon_preview": "月相预览",
+  "gui.back": "返回",
+
+  "clienttimeandweathercontrolmod.config.weather.override_rain_sound": "覆盖雨声",
+  "clienttimeandweathercontrolmod.config.weather.info.override_rain_sound": "是否覆盖原版雨声效果",
+
+  "clienttimeandweathercontrolmod.config.weather.override_thunder_sound": "覆盖雷声",
+  "clienttimeandweathercontrolmod.config.weather.info.override_thunder_sound": "是否覆盖原版雷声效果",
+
+  "clienttimeandweathercontrolmod.config.weather.override_lightning": "覆盖闪电",
+  "clienttimeandweathercontrolmod.config.weather.info.override_lightning": "是否覆盖原版闪电效果",
+
+  "clienttimeandweathercontrolmod.config.weather.override_rain_particles": "覆盖雨雪粒子",
+  "clienttimeandweathercontrolmod.config.weather.info.override_rain_particles": "是否覆盖原版雨雪粒子效果"
   "gui.back": "返回"
 }
